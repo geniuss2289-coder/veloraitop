@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velorai — вход в аккаунт</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='13' fill='%23a8e05f'/%3E%3Cpath d='M15 15 L24 33 L33 15' fill='none' stroke='%230c130a' stroke-width='4.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="login">
+  <div class="bg-deco"><div class="bg-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+  <main class="login-main">
+    <!-- Hero panel -->
+    <section class="login-hero rise">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80" alt="" onerror="this.remove()">
+      <div class="hero-fallback"></div>
+      <div class="hero-content">
+        <span class="badge" style="margin-bottom:14px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          AI API-платформа
+        </span>
+        <h1>Velorai</h1>
+        <p>Единый шлюз к топовым нейросетям. Платите только за фактические токены — без подписок и лимитов.</p>
+        <div class="hero-chips">
+          <span class="badge badge-mono">GLM 5.3 Flash Uncensored</span>
+          <span class="badge">1M контекст</span>
+          <span class="badge">Оплата за токены</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login card -->
+    <section class="login-side">
+      <form class="card login-card auth-card rise" id="authCard" style="--d:120ms" novalidate>
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs><linearGradient id="lgVLogin" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d7f56a"/><stop offset="1" stop-color="#5f9a16"/>
+          </linearGradient></defs>
+          <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lgVLogin)"/>
+          <path d="M15 15 L24 33 L33 15" fill="none" stroke="#0c130a" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h2 id="authTitle">Вход в аккаунт</h2>
+        <p class="login-sub" id="authSub">Введите ваши данные, чтобы продолжить</p>
+
+        <div class="auth-tabs" id="authTabs">
+          <button type="button" class="auth-tab active" data-view="login">Вход</button>
+          <button type="button" class="auth-tab" data-view="reg">Регистрация</button>
+        </div>
+
+        <div class="error-box" id="errorBox" role="alert">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          <span id="errText">Неправильный никнейм или пароль</span>
+        </div>
+
+        <div class="auth-views">
+          <div class="auth-view login-view">
+            <div class="field">
+              <label for="nick">Никнейм</label>
+              <input class="input" id="nick" autocomplete="username" placeholder="Ваш ник" spellcheck="false">
+            </div>
+            <div class="field">
+              <label for="pass">Пароль</label>
+              <input class="input" id="pass" type="password" autocomplete="current-password" placeholder="••••••••">
+            </div>
+            <button class="btn btn-primary btn-block" id="loginBtn" type="submit">Войти</button>
+            <p class="login-hint">Демо-доступ: <b style="color:var(--accent)">ousyt</b></p>
+          </div>
+          <div class="auth-view reg-view">
+            <div class="field">
+              <label for="regNick">Никнейм</label>
+              <input class="input" id="regNick" autocomplete="username" placeholder="Придумайте ник" spellcheck="false">
+            </div>
+            <div class="field">
+              <label for="regPass">Пароль</label>
+              <input class="input" id="regPass" type="password" autocomplete="new-password" placeholder="Минимум 6 символов">
+            </div>
+            <div class="field">
+              <label for="regPass2">Повторите пароль</label>
+              <input class="input" id="regPass2" type="password" autocomplete="new-password" placeholder="Ещё раз">
+            </div>
+            <button class="btn btn-primary btn-block" id="regBtn" type="button">Создать аккаунт</button>
+            <p class="login-hint">Привилегия <b style="color:var(--muted)">Member</b> · данные шифруются и сохраняются в файл проекта</p>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Compact footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+            <defs><linearGradient id="lgVF" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d7f56a"/><stop offset="1" stop-color="#5f9a16"/>
+            </linearGradient></defs>
+            <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#lgVF)"/>
+            <path d="M15 15 L24 33 L33 15" fill="none" stroke="#0c130a" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Velorai
+        </div>
+        <p class="footer-note">Связь с поддержкой и новости платформы — в Telegram</p>
+      </div>
+      <div class="footer-contacts">
+        <a class="tg-chip" href="https://t.me/parvus1917" target="_blank" rel="noopener">
+          <svg class="tg-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 19 19.2c-.2 1-.8 1.2-1.6.7l-4.4-3.2-2.1 2c-.2.2-.4.4-.9.4l.3-4.5L18.6 7c.4-.3-.1-.5-.6-.2L7.7 13.4l-4.3-1.4c-.9-.3-.9-.9.2-1.4L20.7 3.1c.8-.3 1.5.2 1.2 1.5Z"/></svg>
+          <span class="tg-txt"><span class="tg-val">@parvus1917</span><span class="tg-sub">поддержка / пополнение</span></span>
+        </a>
+        <a class="tg-chip" href="https://t.me/velorailol" target="_blank" rel="noopener">
+          <svg class="tg-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 19 19.2c-.2 1-.8 1.2-1.6.7l-4.4-3.2-2.1 2c-.2.2-.4.4-.9.4l.3-4.5L18.6 7c.4-.3-.1-.5-.6-.2L7.7 13.4l-4.3-1.4c-.9-.3-.9-.9.2-1.4L20.7 3.1c.8-.3 1.5.2 1.2 1.5Z"/></svg>
+          <span class="tg-txt"><span class="tg-val">t.me/velorailol</span><span class="tg-sub">телеграм-канал</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Velorai · все права защищены</div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>
